@@ -1,5 +1,12 @@
 import React from "react";
 
-const Index: React.FC<{}> = () => <div> Hello World</div>;
+import Navbar from "../components/Navbar";
+
+const Index: React.FC<{}> = () => (
+  <div>
+    {" "}
+    <Navbar /> Hello World
+  </div>
+);
 
 export default Index;
