@@ -14,6 +14,7 @@ import { withUrqlClient } from "next-urql";
 import NextLink from "next/link";
 import React, { useState } from "react";
 import Layout from "../components/Layout";
+import UpdootSection from "../components/UpdootSection";
 import { usePostsQuery } from "../generated/graphql";
 import { createUrqlClient } from "../utils/createUrlClient";
 
@@ -45,28 +46,7 @@ const Index: React.FC<{}> = () => {
         <Stack spacing={8}>
           {data!.posts.posts.map((p) => (
             <Flex p={5} shadow='md' borderWidth='1px' key={p.id}>
-              <Flex
-                direction='column'
-                justifyContent='center'
-                alignItems='center'
-                mr='4'
-              >
-                <IconButton
-                  aria-label='updoot posts'
-                  size='sm'
-                  onClick={() => console.log("clicked")}
-                >
-                  <ChevronUpIcon />
-                </IconButton>
-                {p.points}
-                <IconButton
-                  aria-label='downboot posts'
-                  size='sm'
-                  onClick={() => console.log("clicked")}
-                >
-                  <ChevronDownIcon />
-                </IconButton>
-              </Flex>
+              <UpdootSection post={p} />
               <Box>
                 <Heading fontSize='xl'>{p.title}</Heading>
                 <Text>Posted By {p.creator.username}</Text>
