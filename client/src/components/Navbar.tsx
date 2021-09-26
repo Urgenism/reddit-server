@@ -41,7 +41,16 @@ const Navbar: React.FC<{}> = () => {
     );
   }
   return (
-    <Flex bg='tomato' p='4' ml='auto' justifyContent='flex-end' color='white'>
+    <Flex
+      position='sticky'
+      top='0'
+      zIndex='10'
+      bg='tomato'
+      p='4'
+      ml='auto'
+      justifyContent='flex-end'
+      color='white'
+    >
       {body}
     </Flex>
   );
